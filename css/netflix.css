@@ -1,0 +1,4 @@
+div.medium:has(button[data-uia="control-speed"]),
+div.medium:has(button[data-uia="control-speed"]) + div {
+  display: none !important;
+}

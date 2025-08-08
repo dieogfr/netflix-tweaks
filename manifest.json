@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix Tweaks",
+  "version": "1.0",
+  "description": "Enhance your Netflix experience with custom playback speeds and auto-skip features.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://www.netflix.com/*"],
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/*"],
+      "css": ["css/netflix.css"],
+      "js": ["js/netflix.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/16.png",
+      "32": "images/32.png",
+      "128": "images/128.png",
+      "256": "images/256.png",
+      "512": "images/512.png"
+    }
+  },
+  "icons": {
+    "16": "images/16.png",
+    "32": "images/32.png",
+    "128": "images/128.png",
+    "256": "images/256.png",
+    "512": "images/512.png"
+  }
+}

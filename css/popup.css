@@ -1,4 +1,5 @@
 :root {
+  --red: oklch(0.5814 0.2349 27.99);
   --black: oklch(0% 0 0);
   --gray: oklch(70% 0 0);
   --white: oklch(100% 0 0);
@@ -8,8 +9,8 @@
   --border-radius: 8px;
   --spacing-sm: 16px;
   --spacing-xs: 8px;
-  --font-base: .875rem;
-  --font-sm: .75rem;
+  --font-base: 0.875rem;
+  --font-sm: 0.75rem;
   --font-family: "Inter", system-ui;
 }
 
@@ -29,9 +30,7 @@ body {
   gap: var(--spacing-xs);
   min-width: 350px;
   padding: var(--spacing-xs);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   width: 100%;
 }
 
@@ -39,16 +38,22 @@ fieldset {
   border: 2px solid var(--fieldset-border);
   border-radius: var(--border-radius);
   padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-sm);
+
+  &:nth-child(2) > div {
+    display: grid;
+    gap: var(--spacing-sm);
+    grid-template-columns: repeat(3, 1fr);
+
+    > div {
+      align-items: center;
+      display: inline-flex;
+      gap: var(--spacing-xs);
+    }
+  }
 }
-fieldset:nth-child(2) > div {
-  display: grid;
-  gap: var(--spacing-sm);
-  grid-template-columns: repeat(3, 1fr);
-}
-fieldset:nth-child(2) > div > div {
-  align-items: center;
-  display: inline-flex;
-  gap: var(--spacing-xs);
+
+input {
+  accent-color: var(--red);
 }
 
 legend {
@@ -66,7 +71,7 @@ input {
   cursor: pointer;
 }
 
-input[type=range] {
+input[type="range"] {
   border: none;
   height: 5px;
   outline: none;
@@ -80,7 +85,7 @@ small {
   margin-top: var(--spacing-xs);
 }
 
-small kbd {
+kbd {
   background-color: var(--kbd-background);
   border-radius: 4px;
   color: var(--white);

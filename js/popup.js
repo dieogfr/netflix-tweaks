@@ -47,7 +47,9 @@ class PopupController {
 
     Object.entries(this.skipToggles).forEach(([key, toggle]) => {
       toggle.addEventListener("change", async () => {
-        const { skipPreferences } = await chrome.storage.local.get("skipPreferences").catch(() => ({}));
+        const { skipPreferences } = await chrome.storage.local
+          .get("skipPreferences")
+          .catch(() => ({}));
 
         await chrome.storage.local
           .set({

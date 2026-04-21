@@ -1,4 +1,57 @@
-div.medium:has(button[data-uia="control-speed"]),
-div.medium:has(button[data-uia="control-speed"]) + div {
-  display: none !important;
+.custom-netflix-slider-wrapper {
+  border-radius: 4px;
+  color: oklch(1 0 0);
+  display: flex;
+  flex-direction: column;
+  font-family: "Netflix Sans", system-ui;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.custom-speed-range {
+  appearance: none;
+  background: oklch(0.4 0 0);
+  border-radius: 2px;
+  height: 4px;
+  outline: none;
+  width: 100%;
+}
+
+.custom-speed-range::-webkit-slider-thumb {
+  appearance: none;
+  background: oklch(1 0 0);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 5px oklch(0 0 0 / 0.5);
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+}
+
+.quick-speed-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.quick-speed-buttons button {
+  background: oklch(0.3 0 0);
+  border: none;
+  border-radius: 4px;
+  color: oklch(1 0 0);
+  cursor: pointer;
+  flex: 1;
+  font-size: 16px;
+  line-height: 2;
+  padding: 4px 8px;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+.quick-speed-buttons button:hover {
+  background: oklch(0.4 0 0);
+}
+
+.quick-speed-buttons button:active {
+  background: oklch(0.5814 0.2349 27.99);
 }
